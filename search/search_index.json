@@ -1,0 +1,68 @@
+{
+    "config": {
+        "lang": [
+            "tr"
+        ],
+        "separator": "[\\s\\-]+",
+        "pipeline": [
+            "stopWordFilter"
+        ]
+    },
+    "docs": [
+        {
+            "location": "",
+            "title": "Dotnet Tavsiyeleri Rehberine Ho\u015f Geldiniz",
+            "text": "<p>\ud83c\udf89 Ho\u015f Geldiniz!</p> <p>.NET geli\u015ftiricileri i\u00e7in \u00f6zenle haz\u0131rlanm\u0131\u015f, k\u0131sa ve etkili ipu\u00e7lar\u0131 koleksiyonuna ho\u015f geldiniz. Bu rehber, .NET ekosisteminde verimlili\u011finizi art\u0131rmay\u0131 hedefleyen ipu\u00e7lar\u0131 ve p\u00fcf noktalar\u0131 i\u00e7ermektedir.</p> <p>Bu proje, s\u00fcrekli g\u00fcncellenmekte ve geli\u015ftirilmektedir. \u0130lerleyen g\u00fcnlerde yeni i\u00e7erikler ve ba\u015fl\u0131klar eklenmeye devam edecektir.</p>"
+        },
+        {
+            "location": "#icerik-baslklar",
+            "title": "\u0130\u00e7erik Ba\u015fl\u0131klar\u0131",
+            "text": "<p>Bu rehber a\u015fa\u011f\u0131daki ba\u015fl\u0131klar\u0131 i\u00e7ermektedir:</p> <ul> <li>C#: C# dilinin incelikleri ve pratik kod \u00f6nerileri</li> <li>.NET: Framework \u00f6zellikleri, performans ipu\u00e7lar\u0131 ve yayg\u0131n senaryolar</li> <li>Entity Framework: Veri eri\u015fimi ve performans optimizasyonlar\u0131na dair p\u00fcf noktalar\u0131</li> <li>Dapper: Performans odakl\u0131 veri eri\u015fimi ve optimize sorgular i\u00e7in pratik \u00e7\u00f6z\u00fcmler</li> <li>Garbage Collector: Bellek y\u00f6netimi ve yeni GC \u00f6zellikleri</li> <li>Async/Await: Asenkron programlamada en iyi uygulamalar</li> <li>LINQ: Performansl\u0131 LINQ kullan\u0131m\u0131 ve yayg\u0131n hatalar</li> <li>Resiliency ve Hata Y\u00f6netimi: Da\u011f\u0131t\u0131k sistemlerde hata tolerans\u0131 ve sistem dayan\u0131kl\u0131l\u0131\u011f\u0131n\u0131 art\u0131ran pratikler.</li> </ul> <p>Her ba\u015fl\u0131k alt\u0131nda, \u00f6\u011frenimi kolayla\u015ft\u0131rmak i\u00e7in k\u0131sa a\u00e7\u0131klamalar ve \u00f6rnek kod par\u00e7alar\u0131 bulabilirsiniz.</p>"
+        },
+        {
+            "location": "#destek-olun",
+            "title": "Destek Olun",
+            "text": "<p>Projeyi faydal\u0131 buluyorsan\u0131z, l\u00fctfen GitHub\u2019da \u2b50 vererek destek olmay\u0131 unutmay\u0131n!</p>"
+        },
+        {
+            "location": "#iletisim",
+            "title": "\u0130leti\u015fim",
+            "text": "<p>Sorular\u0131n\u0131z veya \u00f6nerileriniz varsa, bana ula\u015fabilirsiniz:</p> <p> </p> <p>\ud83d\ude80 Hadi ba\u015flayal\u0131m ve kod kalitenizi birlikte y\u00fckseltelim!</p> <p>Sevgiler, Murat</p>"
+        },
+        {
+            "location": "csharp/creating-a-new-project/",
+            "title": "Async Streams",
+            "text": "<p>Async streams, veri ak\u0131\u015flar\u0131n\u0131 asenkron olarak i\u015flemek i\u00e7in g\u00fc\u00e7l\u00fc bir ara\u00e7t\u0131r. Do\u011fru \u015fekilde kullan\u0131ld\u0131\u011f\u0131nda performans\u0131 art\u0131r\u0131r ve kodunuzu daha verimli hale getirir. Ancak, yanl\u0131\u015f kullan\u0131mlar performans sorunlar\u0131na ve beklenmeyen davran\u0131\u015flara yol a\u00e7abilir.</p>"
+        },
+        {
+            "location": "project/creating-a-new-project/#creating-new-project",
+            "title": "1. Asenkron Ak\u0131\u015flar\u0131n Yanl\u0131\u015f Kullan\u0131m\u0131",
+            "text": "<p>\u274c Yanl\u0131\u015f Kullan\u0131m: T\u00fcm veri setini bellekte tutarak i\u015flem yapmak.</p> <pre><code>var data = await GetDataAsync();\nforeach (var item in data)\n{\n    Console.WriteLine(item);\n}\n</code></pre> <p>\u2705 \u0130deal Kullan\u0131m: Asenkron veri ak\u0131\u015f\u0131n\u0131 <code>await foreach</code> ile t\u00fcketmek.</p> <pre><code>await foreach (var item in GetDataAsync())\n{\n    Console.WriteLine(item);\n}\n</code></pre>"
+        },
+        {
+            "location": "csharp/async-streams/#2-exception-yonetimini-ihmal-etmek",
+            "title": "2. Exception Y\u00f6netimini \u0130hmal Etmek",
+            "text": "<p>\u274c Yanl\u0131\u015f Kullan\u0131m: Asenkron ak\u0131\u015flar s\u0131ras\u0131nda hatalar\u0131 g\u00f6z ard\u0131 etmek.</p> <pre><code>await foreach (var data in GetDataAsync())\n{\n    ProcessData(data); // Hatalar\u0131 ele almaz\n}\n</code></pre> <p>\u2705 \u0130deal Kullan\u0131m: Hatalar\u0131 <code>try-catch</code> blo\u011fu ile y\u00f6netmek.</p> <pre><code>try\n{\n    await foreach (var data in GetDataAsync())\n    {\n        ProcessData(data);\n    }\n}\ncatch (Exception ex)\n{\n    Console.WriteLine($\"Hata: {ex.Message}\");\n}\n</code></pre>"
+        },
+        {
+            "location": "csharp/async-streams/#3-performans-optimize-etmemek",
+            "title": "3. Performans\u0131 Optimize Etmemek",
+            "text": "<p>\u274c Yanl\u0131\u015f Kullan\u0131m: T\u00fcm elemanlar\u0131 ayn\u0131 anda i\u015flemek.</p> <pre><code>await foreach (var item in GetLargeDataAsync())\n{\n    ProcessItem(item);\n}\n</code></pre> <p>\u2705 \u0130deal Kullan\u0131m: Ak\u0131\u015f\u0131n erken sonland\u0131r\u0131labilece\u011fi durumlarda d\u00f6ng\u00fcy\u00fc zaman\u0131nda durdurmak.</p> <pre><code>await foreach (var item in GetLargeDataAsync())\n{\n    if (ShouldStopProcessing(item)) break;\n    ProcessItem(item);\n}\n</code></pre>"
+        },
+        {
+            "location": "csharp/async-streams/#4-cancellationtoken-kullanmn-ihmal-etmek",
+            "title": "4. <code>CancellationToken</code> Kullan\u0131m\u0131n\u0131 \u0130hmal Etmek",
+            "text": "<p>\u274c Yanl\u0131\u015f Kullan\u0131m: Asenkron ak\u0131\u015flarda iptal deste\u011fini g\u00f6z ard\u0131 etmek.</p> <pre><code>await foreach (var item in GetDataAsync())\n{\n    Console.WriteLine(item);\n}\n</code></pre> <p>\u2705 \u0130deal Kullan\u0131m: <code>CancellationToken</code> kullanarak i\u015flem iptalini desteklemek.</p> <pre><code>await foreach (var item in GetDataAsync().WithCancellation(cancellationToken))\n{\n    Console.WriteLine(item);\n}\n</code></pre>"
+        },
+        {
+            "location": "csharp/async-streams/#5-gereksiz-veri-filtreleme",
+            "title": "5. Gereksiz Veri Filtreleme",
+            "text": "<p>\u274c Yanl\u0131\u015f Kullan\u0131m: Ak\u0131\u015ftan al\u0131nan verileri d\u00f6ng\u00fc i\u00e7inde filtrelemek.</p> <pre><code>await foreach (var item in GetDataAsync())\n{\n    if (item.IsRelevant)\n    {\n        Console.WriteLine(item);\n    }\n}\n</code></pre> <p>\u2705 \u0130deal Kullan\u0131m: Ak\u0131\u015f s\u0131ras\u0131nda veri filtrelemeyi optimize etmek.</p> <pre><code>await foreach (var item in GetFilteredDataAsync())\n{\n    Console.WriteLine(item);\n}\n</code></pre>"
+        },
+        {
+            "location": "dapper/async-queries/",
+            "title": "Async/Await ile Asenkron Sorgular",
+            "text": "<p>Dapper, asenkron sorgular i\u00e7in <code>async/await</code> deste\u011fi sunar. Asenkron programlama, y\u00fcksek performansl\u0131 ve \u00f6l\u00e7eklenebilir uygulamalar olu\u015fturman\u0131n temel ta\u015flar\u0131ndan biridir. Ancak, asenkron i\u015flemlerin yanl\u0131\u015f kullan\u0131m\u0131 beklenmeyen davran\u0131\u015flara ve performans sorunlar\u0131na yol a\u00e7abilir.</p>"
+        }
+    ]
+}
